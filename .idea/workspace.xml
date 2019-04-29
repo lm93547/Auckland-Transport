@@ -13,20 +13,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="56" selection-start-line="56" selection-end-line="56" selection-end-column="30" />
+            <state relative-caret-position="401">
+              <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/d3.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="8126">
+              <caret line="510" column="36" selection-start-line="510" selection-start-column="36" selection-end-line="510" selection-end-column="36" />
               <folding>
                 <element signature="n#!!block;n#showAll#0;n#!!block;n#initMap#0" />
               </folding>
@@ -118,25 +123,24 @@
         <option value="$PROJECT_DIR$/routes/bowlinCheahaGPX.gpx" />
         <option value="$PROJECT_DIR$/routes/lexBowling.gpx" />
         <option value="$PROJECT_DIR$/leaflet-elevation-master/leaflet-elevation.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/leaflet-elevation-master/leaflet-elevation.css" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/map.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,38 +151,13 @@
             <path>
               <item name="Road Trip" type="b2602c69:ProjectViewProjectNode" />
               <item name="Road Trip" type="462c0819:PsiDirectoryNode" />
-              <item name="MrMufflon-Leaflet.Elevation-v0.0.3-21-g05d24f4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Road Trip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Road Trip" type="462c0819:PsiDirectoryNode" />
-              <item name="MrMufflon-Leaflet.Elevation-v0.0.3-21-g05d24f4" type="462c0819:PsiDirectoryNode" />
-              <item name="MrMufflon-Leaflet.Elevation-05d24f4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Road Trip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Road Trip" type="462c0819:PsiDirectoryNode" />
-              <item name="MrMufflon-Leaflet.Elevation-v0.0.3-21-g05d24f4" type="462c0819:PsiDirectoryNode" />
-              <item name="MrMufflon-Leaflet.Elevation-05d24f4" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Road Trip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Road Trip" type="462c0819:PsiDirectoryNode" />
-              <item name="MrMufflon-Leaflet.Elevation-v0.0.3-21-g05d24f4" type="462c0819:PsiDirectoryNode" />
-              <item name="MrMufflon-Leaflet.Elevation-05d24f4" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="leaflet-gpx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Road Trip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Road Trip" type="462c0819:PsiDirectoryNode" />
               <item name="UniSans" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -229,11 +208,13 @@
       <workItem from="1555492602318" duration="64440000" />
       <workItem from="1555932161742" duration="3185000" />
       <workItem from="1556139895818" duration="1973000" />
+      <workItem from="1556496685253" duration="58000" />
+      <workItem from="1556496820632" duration="123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151092000" />
+    <option name="totallyTimeSpent" value="151273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -488,6 +469,16 @@
     <entry file="file://$PROJECT_DIR$/UniSans/UniSansDemo-ThinCAPS.otf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8126">
+          <caret line="510" column="36" selection-start-line="510" selection-start-column="36" selection-end-line="510" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!block;n#showAll#0;n#!!block;n#initMap#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/location-pin.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -512,20 +503,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/d3.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="56" selection-start-line="56" selection-end-line="56" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!block;n#showAll#0;n#!!block;n#initMap#0" />
-          </folding>
+        <state relative-caret-position="401">
+          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
         </state>
       </provider>
     </entry>
