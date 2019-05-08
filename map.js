@@ -121,7 +121,7 @@ function initMap() {
         },
 
         _zoomHome: function (e) {
-            map.setView([lat, lng], zoom);
+            map.flyTo([lat, lng], zoom);
         },
 
         _createButton: function (html, title, className, container, fn) {
