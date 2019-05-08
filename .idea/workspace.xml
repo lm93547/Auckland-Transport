@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+            <state relative-caret-position="222">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -27,16 +27,50 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8126">
-              <caret line="510" column="36" selection-start-line="510" selection-start-column="36" selection-end-line="510" selection-end-column="36" />
+            <state relative-caret-position="-170">
+              <caret line="103" column="42" lean-forward="true" selection-start-line="103" selection-start-column="42" selection-end-line="103" selection-end-column="42" />
               <folding>
+                <element signature="e#0#6#0" expanded="true" />
+                <element signature="e#88#94#1" expanded="true" />
+                <element signature="e#0#6#0" expanded="true" />
+                <element signature="e#88#94#1" expanded="true" />
+                <element signature="e#127#134#1" expanded="true" />
+                <element signature="e#144#150#1" expanded="true" />
                 <element signature="n#!!block;n#showAll#0;n#!!block;n#initMap#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/leaflet.zoomhome.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-968">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/leaflet.zoomhome/dist/leaflet.zoomhome.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/leaflet.zoomhome.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -47,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
+            <state relative-caret-position="1428">
               <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
             </state>
           </provider>
@@ -100,6 +134,9 @@
       <replace>FF3A00</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -125,8 +162,8 @@
         <option value="$PROJECT_DIR$/leaflet-elevation-master/leaflet-elevation.js" />
         <option value="$PROJECT_DIR$/leaflet-elevation-master/leaflet-elevation.css" />
         <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/map.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/map.js" />
       </list>
     </option>
   </component>
@@ -145,13 +182,26 @@
         <subPane>
           <expand>
             <path>
-              <item name="Road Trip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Road Trip" type="462c0819:PsiDirectoryNode" />
+              <item name="lm93547.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lm93547.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Road Trip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Road Trip" type="462c0819:PsiDirectoryNode" />
-              <item name="UniSans" type="462c0819:PsiDirectoryNode" />
+              <item name="lm93547.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lm93547.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="leaflet.zoomhome" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lm93547.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lm93547.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="leaflet.zoomhome" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lm93547.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lm93547.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="leaflet.zoomhome" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="leaflet.zoomhome.js" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -174,6 +224,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LM\Documents\GitHub\lm93547.github.io\lm93547.github.io" />
       <recent name="C:\Users\LM\Desktop\untitled_01\Websites\Road Trip" />
       <recent name="C:\Users\LM\Desktop\untitled_01\Websites\Road Trip\routes" />
     </key>
@@ -210,11 +261,12 @@
       <workItem from="1556139895818" duration="1973000" />
       <workItem from="1556496685253" duration="58000" />
       <workItem from="1556496820632" duration="123000" />
+      <workItem from="1557313172724" duration="865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151273000" />
+    <option name="totallyTimeSpent" value="152138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -234,6 +286,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32921812" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Mongo Explorer" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -266,7 +319,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/map.js</url>
-          <line>219</line>
+          <line>145</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -469,25 +522,11 @@
     <entry file="file://$PROJECT_DIR$/UniSans/UniSansDemo-ThinCAPS.otf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8126">
-          <caret line="510" column="36" selection-start-line="510" selection-start-column="36" selection-end-line="510" selection-end-column="36" />
-          <folding>
-            <element signature="n#!!block;n#showAll#0;n#!!block;n#initMap#0" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/d3.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/location-pin.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/leaflet-elevation-master/leaflet-elevation.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -503,13 +542,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/d3.js">
+    <entry file="file://$PROJECT_DIR$/leaflet.zoomhome/dist/leaflet.zoomhome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet.zoomhome.css">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet.zoomhome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-968">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+        <state relative-caret-position="222">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="103" column="42" lean-forward="true" selection-start-line="103" selection-start-column="42" selection-end-line="103" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#88#94#1" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#88#94#1" expanded="true" />
+            <element signature="e#127#134#1" expanded="true" />
+            <element signature="e#144#150#1" expanded="true" />
+            <element signature="n#!!block;n#showAll#0;n#!!block;n#initMap#0" />
+          </folding>
         </state>
       </provider>
     </entry>
