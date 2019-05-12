@@ -1,0 +1,609 @@
+@font-face { font-family: AquaWax; src: url('Aquawax Medium Trial.ttf'); }
+@font-face { font-family: Gotham Narrow; src: url('gotham-narrow-cufonfonts/GothamNarrow-Light.otf'); }
+@font-face { font-family: Gotham XNarrow XLight; src: url('gotham-narrow-cufonfonts/GothamXNarrow-XLight.otf'); }
+@font-face { font-family: Gotham BI; src: url('gotham-narrow-cufonfonts/GothamXNarrow-BoldItalic.otf'); }
+
+/* This is where we can set dimensions of the web page */
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* This is where we can set the style of our map div using an id selector (#) */
+#map {
+    width: 100%;
+    height: 70%;
+    border-style: none;
+    border-width: 4px;
+    border-color: #ffffff;
+
+
+}
+
+
+/* Style the popup */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: aquamarine;
+}
+
+/* Style the info box so that it looks like a Leaflet control */
+.info {
+    font-family: Arial, sans-serif;
+    padding: 6px 8px;
+    background-color: black;
+    background: rgba(255,255,255,1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.legend {
+    line-height: 12px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    border-radius: 30px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+#test {
+
+        font-size: 30px;
+}
+
+.leaflet-menu {
+    position: absolute;
+    background-color: rgba(116, 177, 223, 0.87);
+    overflow: auto;
+    cursor: default;
+    z-index: 9999;
+}
+
+#circle {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 50px;
+    border-radius: 50px;
+    border: 1px solid grey;
+}
+
+#titlebar {
+    padding: 10px;
+    font-family: AquaWax;
+    font-size: 30px;
+    position: relative;
+    transform: translate(-50%,-50%);
+    right: 50%;
+    left: 50%;
+    display: inline-block;
+    top: 3%;
+    background-color: #ffffff;
+    z-index: 102;
+}
+
+#titlebackground {
+    position: fixed;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    width: 100vh;
+    min-width: 100%;
+    height: 20vh;
+    min-height: 10%;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+h1 {
+    font-family: "Gotham BI";
+    font-size: 16px;
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+    margin-right: 5px;
+}
+
+p {
+    text-align: justify;
+    margin-left: 18px;
+    margin-right: 10px;
+}
+
+h3 {
+    font-family: "Gotham Narrow";
+    display: inline;
+}
+
+h2 {
+    font-family: "Gotham Narrow";
+    padding: 5px;
+    display: inline;
+}
+
+#domainParkPic {
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#logo-div {
+    display: inline-block;
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    z-index: 99999;
+    transform: translate(-50%,-50%);
+    transition: 2s;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+
+.logo-text {
+    visibility: hidden;
+    font-family: "Gotham BI";
+    font-size: 40px;
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0;
+    transition: visibility 2s linear 0.5s, opacity 2s;
+    top: 30px;
+    left: 130px;
+
+}
+
+#logo-div:hover .logo-text {
+    visibility: visible;
+    position: absolute;
+    margin-left: 5px;
+    top: 30px;
+    left: 130px;
+    font-size: 40px;
+    transition: 2s;
+    opacity: 1;
+
+
+
+}
+
+#more-info-div {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    writing-mode: vertical-rl;
+    font-family: Gotham XNarrow XLight;
+    font-size: 30px;
+    background-color: #0074d9;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 5px;
+    color: white;
+    border-bottom-right-radius: 15px;
+    transition: 0.5s;
+    width: 30px;
+
+}
+
+#more-info-div:hover {
+    width: 400px;
+    color: #0074d9;
+}
+
+.more-info-text {
+    display: none;
+    writing-mode: lr;
+    font-size: 15px;
+    text-align: left;
+    color: white;
+}
+
+#more-info-div:hover .more-info-text{
+    display: block;
+    margin-left: 5px;
+}
+
+
+
+.btn:hover {
+    direction: ltr;
+    color: white;
+    background-position: 0% 50%;
+}
+
+
+
+.btn {
+    font-family: Gotham Narrow;
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+#logoImage {
+    width: 115px;
+    height: 115px;
+    transition: 2s;
+}
+
+
+
+.input-radio{
+    display: inline-grid;
+    width: 12.5%;
+    float: left;
+    transition: 1.5s;
+    font-family: "Gotham Narrow";
+
+}
+.input-radio input[type=radio] {
+    border: 0px;
+    display: none;
+    transition: 1.5s;
+}
+input[type=radio] + label {
+    padding: 20px;
+    border: 1px solid #ddd;
+
+}
+input[type=radio] + label:hover {
+    border: 1px solid #152b40;
+    background-color: #0074d9;
+    color: white;
+    transition: 1.5s;
+    cursor: pointer;
+}
+input[type=radio]:checked + label {
+    border: 1px solid #005eb4;
+    background-color: #0074d9;
+    color: white;
+}
+
+#clear-button {
+    font-family: "Gotham Narrow";
+    width: 50px;
+    background-color: white;
+    border-style: solid;
+    border-top-style: hidden;
+    height: 50px;
+    position: absolute;
+    top: 173px;
+    z-index: 9999;
+    left: 49px;
+    border-radius: 5px;
+}
+
+#clear-button:hover {
+    border-color: red;
+    border-top-style: solid;
+}
+
+#parkZoomOne {
+    width: 95%;
+    height: 30px;
+    position: relative;
+    top: -25px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #0074d9;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-color: black;
+    outline: 0;
+    color: white;
+}
+
+#parkZoomTwo {
+    width: 95%;
+    height: 30px;
+    position: relative;
+    top: -23px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #0074d9;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-color: black;
+    outline: 0;
+    color: white;
+}
+
+#waitakerePic {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#westernSprings {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#parkZoomThree {
+    width: 95%;
+    height: 30px;
+    position: relative;
+    top: -23px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #0074d9;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-color: black;
+    outline: 0;
+    color: white;
+}
+
+#muriwaiCliffs {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+
+#parkZoomFour {
+    width: 95%;
+    height: 30px;
+    position: relative;
+    top: -23px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #0074d9;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-color: black;
+    outline: 0;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#oneKMbutton {
+    width: 106%;
+}
+
+#twoKMbutton {
+    width: 106%;
+}
+
+#reset {
+    width: 106%;
+
+}
+
+.distBtn {
+    border-style: hidden;
+    border-color: aquamarine;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 1px;
+    margin-right: -15px;
+    font-family: "Gotham Narrow";
+}
+
+.distBtn:hover {
+    border-style: solid;
+    border-color: #0074d9;
+    background-color: #0074d9;
+    color: white;
+}
+
+.distBtn:checked {
+    border-style: solid;
+    border-color: #0074d9;
+    margin: 5px;
+}
+
+.extent-btn {
+    width: 95%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-family: "Gotham Narrow";
+    border-style: none;
+    margin: 5px;
+
+}
+
+.extent-btn:hover {
+    background-color: #0074d9;
+    color: white;
+}
+
+.search-input {
+    margin: 5px;
+    width: 95%;
+}
+
+.calcButton {
+    width: 95%;
+    margin: 5px;
+    font-family: "Gotham Narrow";
+    padding: 5px;
+    border-style: hidden;
+}
+
+.calcButton:hover {
+    background-color: #0074d9;
+    color: white;
+    border-style: solid;
+    border-color: #5f7182;
+}
+
+#directions {
+    background-color: #7fb4a9;
+    font-family: "Gotham Narrow";
+    font-size: 10px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+#wlkBtnOne {
+    width: 95%;
+    margin: 5px;
+    font-family: "Gotham Narrow";
+    padding: 5px;
+    border-style: hidden;
+}
+
+#wlkBtnOne:hover {
+    background-color: #0074d9;
+    color: white;
+    border-style: solid;
+    border-color: #5f7182;
+
+}
+
+#wlkBtnOne:after{
+    content:'';
+}
+
+#wlkBtnOne:hover:after{
+    content:'  11.2km';
+    color: black;
+}
+
+
+#wlkBtnTwo {
+    width: 95%;
+    margin: 5px;
+    font-family: "Gotham Narrow";
+    padding: 5px;
+    border-style: hidden;
+}
+
+#wlkBtnTwo:hover {
+    background-color: #0074d9;
+    color: white;
+    border-style: solid;
+    border-color: #5f7182;
+
+}
+
+#wlkBtnTwo:after{
+    content:'';
+}
+
+#wlkBtnTwo:hover:after{
+    content:'  5.1km';
+    color: black;
+}
+
+#wlkBtnThree {
+    width: 95%;
+    margin: 5px;
+    font-family: "Gotham Narrow";
+    padding: 5px;
+    border-style: hidden;
+}
+
+#wlkBtnThree:hover {
+    background-color: #0074d9;
+    color: white;
+    border-style: solid;
+    border-color: #5f7182;
+
+}
+
+#wlkBtnThree:after{
+    content: '  ';
+}
+
+#wlkBtnThree:hover:after{
+    content: '  18.2km';
+    color: black;
+}
+
+#directionTitle {
+    font-family: "Gotham BI";
+    font-size: 15px;
+}
+
+.reachBtn {
+    width: 118%;
+    margin: 5px;
+    padding: 5px;
+    font-family: "Gotham Narrow";
+    background-color: #ffffff;
+    border-style: none;
+    position: relative;
+    margin-left: -17px;
+    margin-right: 0px;
+}
+
+.reachBtn:hover {
+    background-color: #0074d9;
+    color: white;
+    border-color: #5f7182;
+    border-style: solid;
+}
+
+#travel-times-one {
+    position: absolute;
+
+    left: 220px;
+
+    top: 471px;
+}
+
+#travel-times-two {
+    position: absolute;
+
+    left: 220px;
+
+    top: 505px;
+}
+
+#travel-times-three {
+    position: absolute;
+
+    left: 220px;
+
+    top: 540px;
+}
+
+
+
+
+
+
+
+
+

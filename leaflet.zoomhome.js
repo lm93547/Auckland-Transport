@@ -84,7 +84,7 @@
 
         _zoomHome: function (e) {
             //jshint unused:false
-            this._map.setView(this.options.homeCoordinates, this.options.homeZoom);
+            this._map.flyTo(this.options.homeCoordinates, this.options.homeZoom);
         }
     });
 

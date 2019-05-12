@@ -1,69 +1,150 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:Name="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Road Trip</title>
+    <title>Auckland</title>
     <!-- Load CSS for Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
 
     <!-- Load JavaScript for Leaflet -->
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
-    <!-- Load font awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" crossorigin=""  type="text/javascript"></script>
 
-    <!-- load css style sheet -->
+    <!--  Include targomo core -->
+    <script src="https://releases.targomo.com/core/latest.min.js"  type="text/javascript"></script>
+    <script src="https://releases.targomo.com/leaflet/latest.min.js"  type="text/javascript"></script>
 
-    <!-- load ashland park shape -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.js"></script>
 
-    <link rel="stylesheet" href="style.css">
-
-    <!-- load elevation path and style sheet -->
-
-    <script src="node_modules/d3-scale/dist/d3-scale.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Load JavaScript for marker cluster -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
 
 
 
-
-
-    <script src="node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
-    <link rel="stylesheet" href="node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Load Turf.js -->
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
 
+    <script type="text/javascript" src="bus.js"></script>
 
-    <script src="routes/ors-export-linestring.js" type="text/javascript"></script>
+    <script type="text/javascript" src="busR.js"></script>
 
-    <script src="routes/bowlinCheahaElevTwo.js"></script>
-    <script src="leaflet-elevation-master/leaflet-elevation.js"></script>
-    <link rel="stylesheet" href="leaflet-elevation-master/leaflet-elevation.css">
+    <script type="text/javascript" src="cycle.js"></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script type="text/javascript" src="parks.js"></script>
 
-    <!-- Load JavaScript for marker cluster -->
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
-    <script src="d3.js"></script>
+    <script type="text/javascript" src="trainRouteReproj.js"></script>
+
+    <script type="text/javascript" src="trainNames.geojson"></script>
+
+    <script type="text/javascript" src="walking-tracks-clipped.geojson"></script>
+
+    <link rel="stylesheet" type="text/css" href="./NZCSS.css">
+
+
+
+    <script src="Leaflet.SlideMenu-master/src/L.Control.SlideMenu.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="Leaflet.SlideMenu-master/src/L.Control.SlideMenu.css">
+
+    <link rel="stylesheet" href="leaflet-groupedlayercontrol-gh-pages/leaflet-groupedlayercontrol-gh-pages/dist/leaflet.groupedlayercontrol.min.css">
+
+    <script src="leaflet-groupedlayercontrol-gh-pages/leaflet-groupedlayercontrol-gh-pages/dist/leaflet.groupedlayercontrol.min.js"></script>
+
+    <script src="leaflet-ajax-gh-pages/leaflet-ajax-gh-pages/dist/leaflet.ajax.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.css" />
     <script src="leaflet.zoomhome.js"></script>
     <link rel="stylesheet" href="leaflet.zoomhome.css">
+    <script src="leaflet-search.src.js"></script>
+    <link rel="stylesheet" href="leaflet-search.src.css">
+    <script src="Leaflet.heat-gh-pages/Leaflet.heat-gh-pages/dist/leaflet-heat.js"></script>
 
 
 </head>
+
 <body onload="initMap();">
-
-<script src="map.js"></script>
-
-<!-- Make a division to put the map in -->
+<br>
+<br>
+<br>
+<div id="logo-div"><img id="logoImage" src="ATlogo.png"><div class="logo-text">Auckland Transport</div></div>
+<div id="more-info-div">More Info<div class="more-info-text">Press the menu button on the top right corner of the map for <br> instructions on how to use this interactive webmap!</div></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div id='map'></div>
 
-<div id="title-div">Lucas & Sarah 2018 North American Roadtrip<br><span id="small-text">Hover over a route or click a marker for route information</span></div>
 
-<div id="elevation-div"></div>
+<div class="input-radio"><input type="radio" name="layerControl" value="1" onchange="switchLayer(this)" id="busButton"><label for="busButton">Bus routes</label></div>
+<div class="input-radio"><input type="radio" name="layerControl" value="2" onchange="switchLayer(this)" id="cycleButton"><label for="cycleButton">Cycle routes</label></div>
+<div class="input-radio"><input type="radio" name="layerControl" value="3" onchange="switchLayer(this)" id="ferryButton"><label for="ferryButton">Ferry routes</label></div>
+<div class="input-radio"><input type="radio" name="layerControl" value="4" onchange="switchLayer(this)" id="trainButton"><label for="trainButton">Train network</label></div>
+<div class="input-radio"><input type="radio" name="layerControl" value="5" onchange="switchLayer(this)" id="transitButton"><label for="transitButton">Transit reachability</label></div>
 
-<div id="name">Name: </div>
-<div id="gpx-summary" class="gpx-summary"><span class="totlen"><span class="summarylabel">Total Length: </span><span class="summaryvalue">0</span></span> &mdash; <span class="maxele"><span class="summarylabel">Max Elevation: </span><span class="summaryvalue">0</span></span> &mdash; <span class="minele"><span class="summarylabel">Min Elevation: </span><span class="summaryvalue">0</span></span></div>
+<div class="input-radio"><input type="radio" name="layerControl" value="6" onchange="switchLayer(this)" id="transitExtent"><label for="transitExtent">Transit Extent</label></div>
+
+<div class="input-radio"><input type="radio" name="layerControl" value="7" onchange="switchLayer(this)" id="parkButton"><label for="parkButton">Parks</label></div>
+
+<div class="input-radio"><input type="radio" name="layerControl" value="8" onchange="switchLayer(this)" id="walkingButton"><label for="walkingButton">Walking paths</label></div>
+
+
+
+
+<button id="clear-button" onclick="clearLayers()">Clear Map</button>
+
+<!---creating input boxes for directions
+<input type="text" id="start"/>
+
+
+<input type="text" id="end"/>
+<button id="submitButton">Press Me!</button>
+<button id="clearButton" onclick = "clearButton();">Clear</button>
+This is where the table of directions will go
+<div id='directions'></div>
+
+
+
+<div class="btn-group" data-toggle="buttons" style="width:100%">
+    <button type="submit" class='btn' id="busButton" style="width:20%">Bus Services</button>
+    <button class='btn' id="cycleButton" style="width:20%">Cycle Lanes</button>
+    <button class='btn' id="ferryButton" style="width:20%">Ferry Routes</button>
+    <button class='btn' id="trainButton" style="width:20%">Train Routes</button>
+    <button class='btn' id="bikeTimes" style="width:20%">Transit Reachability</button>
+</div>
+
+
+
+<div class="input-radio"><input type="radio" id="busButton" name="group1" value="on"> <label for="busButton">Bus Services</label></div>
+<div class="input-radio"><input type="radio" id="cycleButton" name="group1" value="on"> <label for="cycleButton">Cycle Lanes</label></div>
+<div class="input-radio"><input type="radio" name="group1" id="ferryButton" value="on"> <label for="ferryButton">Ferry Routes</label></div>
+<div class="input-radio"><input type="radio" name="group1" id="trainButton" value="on"> <label for="trainButton">Train Routes</label></div>
+<div class="input-radio"><input type="radio" name="group1" id="bikeTimes" value="on"> <label for="bikeTimes">Transit Reachability</label></div>
+
+
+
+<button id="buttonOne">Auckland Domain Premier</button>
+
+<button type="button" class="button-school" value="hidden-springs">
+    <h2>Hidden Springs</h2>
+    <span class="select-active">SELECT</span>
+</button>
+<button type="button" class="button-school" value="hidden-springs">
+    <h2>Hidden Springs</h2>
+    <span class="select-active">SELECT</span>
+</button>
+<button type="button" class="button-school" value="hidden-springs">
+    <h2>Hidden Springs</h2>
+    <span class="select-active">SELECT</span>
+</button>
+-->
+<script src="NZ.js"></script>
 
 </body>
 </html>

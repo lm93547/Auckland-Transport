@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Test 6</title>
+		
+		<!-- Load CSS for Leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+
+		<!-- Load JavaScript for Leaflet -->
+		<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+		
+		<!--load JavaScript for Leaflet-GPX-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
+		
+		<!--load js file with points of interest (POI) data-->
+		<script src='POI.js'></script>
+		
+		
+		<!--tell the mobile browser to disable unwanted scaling of the page
+		and set it to its actual size-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Add CSS for the page -->
+		<style>
+		
+			/* This is where we can set dimensions of the web page. Setting it so that it fits a mobile page */
+			html, body {
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				height: 100%;
+			}
+			
+			/* This is where we can set the style of our map div using an id selector (#) */
+			#map {
+				width: 100%;
+				height: 70%;
+					
+			}
+			
+			#directions {
+				overflow: scroll;
+				
+			}
+			
+			/* Style the table */
+			table {
+				height: 30%;
+				margin-top: 10px;
+				font-family: sans-serif;
+				width: 100%;
+				text-align: center;
+			}
+			
+			/* Style the table header */
+			th {
+			  background-color: #0099ff;
+			  color: white;
+			  padding: 3px;
+			}
+			
+			/* Style the table cells */
+			td {
+			  padding: 3px;
+			}
+			
+			/* Style the table rows (only colours the even numbered rows in the table) */
+			tr:nth-child(even) {
+				background-color: #f2f2f2;
+			}	
+			
+			/* Set style of the menu at the top */
+			ul {
+  				list-style-type: none;
+  				margin: 0;
+  				padding: 0;
+  				overflow: hidden;
+  				background-color: #66c2ff;
+  				position: absolute;
+  				top: 0;
+  				width: 100%;
+  				z-index:999999;
+				}
+
+			/* set the style of the menu so that it runs across the top*/
+			li {
+  				float: left;
+				}
+		
+			/* set the style of the text and colour of the menu bar */
+			li a {
+  				display: block;
+  				color: white;
+  				text-align: center;
+  				padding: 14px 16px;
+  				text-decoration: none;
+  				font-family: Arial, Helvetica, sans-serif;
+				}
+
+			/* set the background colour of the menu bar when it is hovered over*/
+				li a:hover {
+  				background-color: #0099ff;
+  				}
+		</style>
+	</head>
+	<body onload="initMap();">
+	
+	<!--adding a menu bar at the top of the page-->
+	<ul>
+  			<li><a class="active" window.location.href="HomePage.html">Home</a></li>
+  			<li><a href="#about">About</a></li>
+  			<li><a href="#contact">Enter Challenge</a></li>
+	</ul>
+	
+		<!-- Make a division to put the map in -->
+		<div id='map'></div>
+		
+		<!--creating input boxes for directions-->
+		<input type="text" id="start" value="Start Location"/>
+		<input type="text" id="end" value="End Location"/>
+		<button id="submitButton">Calculate Route</button>
+		<button id="clearButton" onclick = "clearButton();">Clear</button>
+		
+		<!-- This is where the table of directions will go -->
+		<div id='directions'></div>
+		
+		<!-- Add JavaScript -->
+		<script>
+			
+			//setup global map variable
+			var map, start, end, waypoint, startName, endName, waypointName, geojson;
+			
+			function clearButton() {
+							document.getElementById('start').value = "Start Location"
+							document.getElementById('end').value = "End Location"
+							map.setView([51.50605851, -0.123708], 13);
+							map.removeLayer(geojson);
+							document.getElementById('directions').innerHTML = "Press The Map";}
+			
+			
+				
+			/**
+			 * Initialise the Map
+			 */
+			function initMap(){
+				
+				// this is a variable that holds the reference to the Leaflet map object
+				map = L.map('map').setView([51.50605851, -0.123708], 13);   //this will give a map of Great Britain
+			
+				// this adds the basemap tiles to the map
+				L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+				}).addTo(map);	
+				
+				startName;
+				endName;
+				
+				//Add Points of interest layer to map
+				//L.geoJson(POI).addTo(map);
+				
+				var pointsOfInterest = POI
+				L.geoJson(pointsOfInterest, {
+					
+					//make the points into a layer for interaction
+					pointToLayer: function(feature, latlng) {
+					
+					//return markers in their original position
+					return new L.marker (latlng).on('click',function(e){
+			
+					//If the start box is populated with "start Location" (i.e. no start location yet input)
+					 if (document.getElementById('start').value == "Start Location")
+	
+					
+					// Then populate the box with the name of the marker
+					{document.getElementById('start').value = e.target.feature.properties.Name}
+					
+					//Then, is the end box populated with "End Location"? (i.e. no end location input yet)
+					else if (document.getElementById('end').value == "End Location")
+					
+                   //if so, then populate with the name of the marker clicked on.
+				   {document.getElementById('end').value = e.target.feature.properties.Name}
+				 
+				 
+				 //If yes, ask to search for new route
+				else {
+				 //alert for new route
+				 
+				 var txt;
+						if(confirm("Clear route boxes?")) {
+							document.getElementById('start').value = "Start Location";
+							document.getElementById('end').value = "End Location";
+							map.setView([51.50605851, -0.123708], 13);
+							map.removeLayer(geojson);
+							document.getElementById('directions').innerHTML = "Press The Map";
+						}; 
+							
+						//if no ignore
+						//if yes, clear both boxes
+					
+				}		
+				})}})
+				
+				.addTo(map);
+					
+				// geocode the place names and calculate route
+				document.getElementById('submitButton').onclick = startGeocoding;
+				
+			}
+			
+			/**
+			 * Step 1 - geocode the start location
+			 */
+			function startGeocoding(){
+			
+			//this is to collect info on where you want directions from and to
+			startName = document.getElementById('start').value;
+			endName = document.getElementById('end').value;
+			
+				// geocode start location...
+				makeRequest(getGeocodeURL(startName), continueGeocoding);
+			}
+			
+			
+			/**
+			 * Step 2 - store the start location and geocode the end location
+			 */
+			function continueGeocoding(data){
+			
+				// record the start locaion
+				start = [data[0].lon, data[0].lat];
+				
+				// geocode end location...
+				makeRequest(getGeocodeURL(endName), finishGeocoding);
+			}
+			
+			
+			/**
+			 * Step 3 - store the end location and start routing
+			 */
+			function finishGeocoding(data){
+				
+				// record the end location
+				end = [data[0].lon, data[0].lat];
+				
+				//calculate the route between the two locations
+				doRouting();
+			}
+			
+			
+			/**
+			 * Generate and return a Nominatim geocoding URL for a given placename
+			 */
+			function getGeocodeURL(placename) {
+				return ["https://nominatim.openstreetmap.org/?format=json&limit=1&q=", placename].join("");
+			}
+			
+			
+			/**
+			 * Calculate the route between start and end global variables
+			 */
+			function doRouting() {
+				
+				//construct a url out of the required options for OpenRouteService
+				var url = [
+	
+					// these bits are fixed or imported from the start and variables above 
+					'https://api.openrouteservice.org/directions?',
+					'api_key=','5b3ce3597851110001cf624870157e2cc0d7404a839144421c050603',	
+					'&coordinates=',start[0].toString(),',',start[1].toString(),'%7C', end[0].toString(),',',end[1].toString(),
+		
+					// these are the options, a comprehensive list is available at: https://openrouteservice.org/dev/#/api-docs/directions/get
+					'&profile=', 			'foot-walking',	
+					'&preference=', 		'fastest',
+					'&format=', 			'geojson',
+					'&units=', 				'km',
+					'&geometry_format=', 	'geojson'
+		
+				].join("");	//join the array with no delimiter
+
+				// log the url that was constructed
+				//console.log(url);
+	
+				// send the request to OpenRouteService, set callback
+				makeRequest(url, routeToMap);
+			}
+			
+			
+			/**
+			 * Make a request for JSON over HTTP, pass resulting text to callback when ready
+			 */
+			function makeRequest(url, callback) {
+
+				//initialise the XMLHttpRequest object
+				var httpRequest = new XMLHttpRequest();
+
+				//set an event listener for when the HTTP state changes
+				httpRequest.onreadystatechange = function () {
+
+					//if it works, parse the JSON and pass to the callback	
+					//a successful HTTP request returns a state of DONE and a status of 200
+					if (httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200) {
+						callback(JSON.parse(httpRequest.responseText));
+					}
+				};
+
+				//prepare and send the request
+				httpRequest.open('GET', url);
+				httpRequest.send();
+			}   
+			
+			
+			/**
+			 * Retrieve a GeoJSON route and add it to the map
+			 */
+			 function routeToMap(route) {
+			 
+			 	// load into L.GeoJson, style and add to the map
+				geojson = L.geoJson(route, {
+					style: {
+						weight: 4,
+						opacity: 1,
+					}
+				}).addTo(map);
+				
+				// zoom the map to fit
+				map.fitBounds(geojson.getBounds());
+				
+				// add markers to the start and end (remember to flip longitude and latitude!)
+				markerStart = L.marker([start[1], start[0]]);//.addTo(map);
+				markerEnd = L.marker([end[1], end[0]]);//.addTo(map);
+			 
+			 	// get info about the route from the dataset		 
+			 	var duration = route.features[0].properties.summary[0].duration;
+			 	var distance = route.features[0].properties.summary[0].distance;
+
+				// get the description of the route
+			 	var segments = route.features[0].properties.segments;
+			 	
+			 	// build HTML directions as a table
+			 	var directionsHTML = [
+			 		"<table><th>Directions (", 
+			 		getDistanceString(distance), 
+			 		", <i>",
+			 		getDurationString(duration),
+			 		"</i>)</th>"
+			 	].join("");
+			 	
+			 	// loop through the description for each segment of the journey
+				for (var i = 0; i < segments.length; i++){
+					
+					// loop through each step of the current segment
+					for (var j = 0; j < segments[i].steps.length; j++){
+						
+						// add a direction to the table
+						directionsHTML += [ 
+							"<tr><td><b>", 
+							segments[i].steps[j].instruction,
+							"</b> (",
+							getDistanceString(segments[i].steps[j].distance),
+							", <i>",
+							getDurationString(segments[i].steps[j].duration),
+							"</i>)</td></tr>"
+						].join("");
+					}
+				}
+				
+				// close the table
+				directionsHTML += "</table>";
+				
+				// load the directions into the div
+				document.getElementById('directions').innerHTML = directionsHTML;
+			 }
+
+
+			/**
+			 * Returns a sensible distance string for a given distance in km
+			 */
+			function getDistanceString(distance){
+				
+				//is it more than 1km?
+				if (distance > 1) {
+					
+					//if so, use km
+					return distance.toFixed(1) + "km";
+				
+				} else {
+					
+					// if not, use m
+					return Math.ceil(distance * 1000).toFixed(0) + "m";
+				}
+			}
+			
+			
+			/**
+			 * Returns a sensible duration string for a given duration in seconds
+			 */
+			function getDurationString(duration){
+				
+				// hours
+				if (duration > 3600) {
+					
+					//return hours and minutes
+					return Math.floor(duration / 3600).toFixed(0) + " hrs " + 
+						Math.ceil((duration % 3600) / 60).toFixed(0) + " mins";
+				
+				// minutes
+				} else if (duration > 60) {
+					
+					// minutes only
+					return Math.ceil(duration / 60).toFixed(0) + " mins";
+				
+				// seconds
+				} else {
+					
+					// seconds only
+					return Math.ceil(duration).toFixed(0) + " secs";
+				}
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

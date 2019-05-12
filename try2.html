@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A2</title>
+    <!-- Load CSS for Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+
+    <!-- Load JavaScript for Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" crossorigin=""  type="text/javascript"></script>
+
+    <!--  Include targomo core -->
+    <script src="https://releases.targomo.com/core/latest.min.js"  type="text/javascript"></script>
+    <script src="https://releases.targomo.com/leaflet/latest.min.js"  type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.js"></script>
+
+    <!-- Load JavaScript for marker cluster -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Load Turf.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+
+    <script type="text/javascript" src="bus.js"></script>
+
+    <script type="text/javascript" src="busR.js"></script>
+
+    <script type="text/javascript" src="cycle.js"></script>
+
+    <script type="text/javascript" src="parks.js"></script>
+
+    <script type="text/javascript" src="trainRouteReproj.js"></script>
+
+    <script type="text/javascript" src="trainNames.geojson"></script>
+
+    <link rel="stylesheet" type="text/css" href="./NZCSS.css">
+
+    <script src="Leaflet.SlideMenu-master/src/L.Control.SlideMenu.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="Leaflet.SlideMenu-master/src/L.Control.SlideMenu.css">
+
+    <link rel="stylesheet" href="leaflet-groupedlayercontrol-gh-pages/leaflet-groupedlayercontrol-gh-pages/dist/leaflet.groupedlayercontrol.min.css">
+
+    <script src="leaflet-groupedlayercontrol-gh-pages/leaflet-groupedlayercontrol-gh-pages/dist/leaflet.groupedlayercontrol.min.js"></script>
+
+    <script src="leaflet-ajax-gh-pages/leaflet-ajax-gh-pages/dist/leaflet.ajax.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.css" />
+
+
+
+
+
+</head>
+
+<body onload="initMap()">
+
+<script src="NZ.js"></script>
+
+<div id='map'></div>
+<input type="radio" name="layerControl" value="1" onchange="switchLayer(this)">
+<input type="radio" name="layerControl" value="2" onchange="switchLayer(this)">
+<input type="radio" name="layerControl" value="3" onchange="switchLayer(this)">
+
+</body>
+</html>

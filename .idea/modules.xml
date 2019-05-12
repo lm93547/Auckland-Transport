@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Road Trip.iml" filepath="$PROJECT_DIR$/.idea/Road Trip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/WebStorm.iml" filepath="$PROJECT_DIR$/.idea/WebStorm.iml" />
     </modules>
   </component>
 </project>
